@@ -1,6 +1,9 @@
 'use strict'
 
 const router = require('express').Router()
+const { Candy } = require('../db/database');
+
+router.use('/candy', require('./candy'));
 
 // Your routes go here!
 // NOTE: Any routes that you put here are ALREADY mounted on `/api`
