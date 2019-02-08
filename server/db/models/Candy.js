@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../database');
 
-module.exports = db.define('candy', {
+const Candy = db.define('candies', {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -25,8 +25,12 @@ module.exports = db.define('candy', {
   },
   imageURL: {
     type: Sequelize.STRING,
+    defaultValue: 'http://icons.iconarchive.com/icons/pelfusion/christmas-shadow-2/128/Candy-icon.png',
     validate: {
-      defaultValue: 'CANDY!'
+      isUrl: true
     }
   }
 });
+
+
+module.exports = Candy;

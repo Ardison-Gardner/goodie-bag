@@ -3,8 +3,8 @@ const { Candy } = require('../db');
 
 router.get('/', async (req, res, next) => {
   try {
-    const students = await Candy.findAll();
-    res.json(students);
+    const candies = await Candy.findAll();
+    res.json(candies);
   } catch (err) {
     next(err);
   }
